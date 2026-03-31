@@ -18,29 +18,36 @@ content.yml                # Contenido de la presentación
 engine.py                  # Motor principal
 ```
 
-## Instalación
+## Inicio rápido (Windows)
+
+### Requisitos previos
+
+Instalar Python desde https://www.python.org/downloads/ — **marcar la casilla "Add Python to PATH"** durante la instalación.
+
+### Instalación
+
+1. Descargar o clonar este repositorio
+2. Hacer doble clic en **`instalar.bat`**
+
+### Generar una presentación
+
+1. Editar el archivo `content.yml` con el contenido deseado (se puede abrir con Bloc de notas)
+2. Hacer doble clic en **`generar.bat`**
+3. La presentación se genera en la carpeta `output/`
+
+## Uso avanzado (Linux/Mac)
 
 ```bash
 uv venv .venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
-```
 
-## Uso
-
-### Generar una presentación
-
-```bash
+# Generar presentación
 python engine.py run content.yml
-```
 
-### Inspeccionar una plantilla
-
-```bash
+# Inspeccionar una plantilla nueva
 python engine.py inspect "data/4857105a (1).pptx"
 ```
-
-Muestra todos los layouts disponibles con sus placeholders, útil para crear el `mapping.yml` de una plantilla nueva.
 
 ## Configuración
 
