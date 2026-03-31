@@ -14,19 +14,10 @@ echo  ----------------------------------------
 
 :: Listar archivos .yml en clases/
 set count=0
-for %%f in (clases\*.yml) do (
-    set /a count+=1
-    set "file[!count!]=%%f"
-    set "name=%%~nf"
-    echo   !count!. !name!
-)
+for %%f in (clases\*.yml) do call :addfile "%%f" "%%~nf"
 
-:: También incluir content.yml de la raíz si existe
-if exist content.yml (
-    set /a count+=1
-    set "file[!count!]=content.yml"
-    echo   !count!. content
-)
+:: Incluir content.yml si existe
+if exist content.yml call :addcontent
 
 if !count! equ 0 goto :noclases
 
@@ -42,10 +33,10 @@ set "selected=!file[%choice%]!"
 if not defined selected goto :invalid
 
 echo.
-echo  Generando desde: %selected%
+echo  Generando desde: !selected!
 echo.
 
-.venv\Scripts\python engine.py run "%selected%"
+.venv\Scripts\python engine.py run "!selected!"
 if %errorlevel% neq 0 goto :errgener
 
 echo.
@@ -55,6 +46,18 @@ start output
 pause
 exit /b 0
 
+:addfile
+set /a count+=1
+set "file[!count!]=%~1"
+echo   !count!. %~2
+goto :eof
+
+:addcontent
+set /a count+=1
+set "file[!count!]=content.yml"
+echo   !count!. content
+goto :eof
+
 :noinstall
 echo [ERROR] Primero ejecuta instalar.bat
 pause
@@ -62,7 +65,7 @@ exit /b 1
 
 :noclases
 echo.
-echo   No hay archivos .yml en la carpeta "clases/"
+echo   No hay archivos .yml en la carpeta clases
 echo   Copia _plantilla.yml y renombralo para empezar.
 pause
 exit /b 1
