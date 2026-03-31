@@ -33,7 +33,7 @@ class PPTXGenerator:
     def load_config(self, content_path: str):
         """Carga content.yml y el mapping.yml referenciado."""
         content_path = Path(content_path).resolve()
-        self.content_dir = content_path.parent
+        self.content_dir = Path.cwd()
 
         with open(content_path, encoding="utf-8") as f:
             self.content = yaml.safe_load(f)

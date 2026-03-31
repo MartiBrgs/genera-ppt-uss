@@ -1,0 +1,53 @@
+# =============================================
+#  PLANTILLA PARA CREAR UNA CLASE NUEVA
+# =============================================
+#  1. Copia este archivo y renómbralo (ej: clase_01_tema.yml)
+#  2. Edita el contenido abajo
+#  3. Ejecuta generar.bat y selecciona tu archivo
+#
+#  LAYOUTS DISPONIBLES:
+#    portada          -> titulo + subtitulo
+#    portada_alt      -> titulo + subtitulo (diseño alternativo)
+#    portadilla       -> titulo (divisor de sección)
+#    contenido_estandar -> titulo + cuerpo
+#    cierre           -> slide de cierre (sin texto)
+#
+#  TIPS:
+#    - Para texto multilínea usa | después de cuerpo:
+#    - Cada línea nueva aparece como una línea separada en el slide
+#    - Si quieres bullets, ponlos tú: "- item" o "• item"
+# =============================================
+
+config:
+  map_ref: "data/mapping.yml"
+  output_file: "output/MI_PRESENTACION.pptx"   # Cambia el nombre del archivo de salida
+  font_size_titulo: 28
+  font_size_cuerpo: 18
+
+slides:
+  - layout: "portada"
+    data:
+      titulo: "TITULO DE LA CLASE"
+      subtitulo: "SUBTITULO"
+
+  - layout: "contenido_estandar"
+    data:
+      titulo: "Índice"
+      cuerpo: |
+        1. Primer tema
+        2. Segundo tema
+        3. Tercer tema
+
+  - layout: "portadilla"
+    data:
+      titulo: "PRIMER TEMA"
+
+  - layout: "contenido_estandar"
+    data:
+      titulo: "Titulo del contenido"
+      cuerpo: |
+        Escribe aquí el contenido.
+        Cada línea es un punto nuevo.
+        - Puedes usar guiones para bullets.
+
+  - layout: "cierre"

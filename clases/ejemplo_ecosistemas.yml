@@ -1,0 +1,43 @@
+config:
+  map_ref: "data/mapping.yml"
+  output_file: "output/Sesion_Ejemplo_01.pptx"
+  font_size_titulo: 28   # Tamaño para títulos en puntos (opcional)
+  font_size_cuerpo: 18   # Tamaño para cuerpo en puntos (opcional)
+
+slides:
+  - layout: "portada"
+    data:
+      titulo: "CALIDAD Y SEGURIDAD EN SALUD"
+      subtitulo: "NÚCLEO 2025"
+
+  - layout: "contenido_estandar"
+    data:
+      titulo: "Índice de contenidos"
+      cuerpo: |
+        - Cap 1
+        - Cap 2
+        - Cap 3
+
+  - layout: "portadilla"
+    data:
+      titulo: "CAPITULO 1"
+
+  - layout: "contenido_estandar"
+    data:
+      titulo: "Ecosistema: Bosque Templado Lluvioso"
+      cuerpo: |
+        Ubicación: Biobío a Chiloé.
+        - Precipitación: 2.000–5.000 mm/año.
+        - Especie: Alerce (Fitzroya cupressoides).
+        - Estado de conservación: Monumento Natural.
+
+  - layout: "contenido_estandar"
+    data:
+      titulo: "Fauna Representativa"
+      cuerpo: |
+        Pudú (Pudu puda): ciervo más pequeño del mundo.
+        Monito del monte (Dromiciops gliroides).
+        Carpintero negro (Campephilus magellanicus).
+        Ranita de Darwin (Rhinoderma darwinii).
+
+  - layout: "cierre"
