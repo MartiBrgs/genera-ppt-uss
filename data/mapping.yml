@@ -1,0 +1,26 @@
+version: "1.0"
+template_file: "4857105a (1).pptx"
+
+layouts:
+  portada:
+    index: 0
+    placeholders:
+      titulo: 0
+      subtitulo: 1
+  portada_alt:
+    index: 1
+    placeholders:
+      titulo: 0
+      subtitulo: 1
+  portadilla:
+    index: 2
+    placeholders:
+      titulo: 0
+  contenido_estandar:
+    index: 3
+    placeholders:
+      titulo: 0
+      cuerpo: 1
+  cierre:
+    index: 4
+    placeholders: {}
